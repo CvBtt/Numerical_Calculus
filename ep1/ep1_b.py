@@ -5,7 +5,7 @@ from ep1_pre import funcao
 pd.options.display.float_format = '{:.8f}'.format
 
 def derivada_funcao(x):
-    return (3/4)*x**(-1/4)*math.cos(2*x) - 2*x**(3/4)*math.sin(2*x)
+    return 2*x
 
 def newton_raphson(f, df, x0, tol):
     lista_X = []
