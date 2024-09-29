@@ -12,7 +12,7 @@ def preliminar():
     return (x, resultados)
   
 def funcao(x):
-    return x**(3/4) * math.cos(x * 2)
+    return x**(2) - 5
   
 
 variavel = preliminar()

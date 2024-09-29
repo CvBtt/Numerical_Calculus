@@ -2,7 +2,7 @@ import math
 import pandas as pd
 from ep1_pre import funcao
 
-# Configurando o pandas para mostrar 8 casas decimais
+# Configurando o pandas para mostrar 8 casas decimais mb 
 pd.options.display.float_format = '{:.8f}'.format
 
 def bisseccao(f, a, b, tol):
@@ -39,7 +39,7 @@ def bisseccao(f, a, b, tol):
     
     return c, tabela
 
-raiz, tabela = bisseccao(funcao, 2, 3, 1e-5)
+raiz, tabela = bisseccao(funcao, 2, 3, 1e-4)
 print(f"A raiz encontrada é: {raiz:.8f}")
 
 # Exibindo a tabela
