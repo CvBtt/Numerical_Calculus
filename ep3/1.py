@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 # Função a ser integrada
 def integrand(x):
-    return 6 - 6 * x **5
+    return 6 - 6 * x ** 5
 
 # Método de Simpson
 def simpson_integration(f, a, b, n):
@@ -29,11 +29,17 @@ for p in p_values:
     errors_double.append(abs(I_num_double - I_analytical))
     print(f"{p}\t{N}\t{I_num_double}\t{errors_double[-1]}")
 
-# Gráfico log2(erro) vs p
-plt.plot(p_values, np.log2(errors_single), label="Precisão Simples")
-plt.plot(p_values, np.log2(errors_double), label="Precisão Dupla")
+# Substitui valores zero por um valor muito pequeno para evitar log(0)
+errors_single = [err if err != 0 else 1e-16 for err in errors_single]
+errors_double = [err if err != 0 else 1e-16 for err in errors_double]
+
+# Gráfico log2(erro) vs p com ajustes para visualização
+plt.plot(p_values, np.log2(errors_single), label="Precisão Simples", marker='o')
+plt.plot(p_values, np.log2(errors_double), label="Precisão Dupla", marker='x')
 plt.xlabel("p")
 plt.ylabel("log2(erro)")
 plt.legend()
 plt.title("Erro no Método de Simpson (Precisão Simples e Dupla)")
+plt.grid(True)
+plt.ylim(bottom=-30)  # Ajusta o limite inferior do eixo y para garantir visibilidade
 plt.show()
