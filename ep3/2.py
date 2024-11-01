@@ -11,9 +11,10 @@ def pendulum_integrand(phi, k):
     return 1 / np.sqrt(1 - k**2 * np.sin(phi)**2)
 
 # Calculo do período para diferentes ângulos iniciais θ0
-theta0_values = np.linspace(0, np.pi, 10)
+theta0_values = np.linspace(0.1, 20*np.pi, 1000)
 T_Galileu = 2 * np.pi * np.sqrt(l / g)
 T_values = []
+print(f"theta0\tT/T_Galileu")
 
 for theta0 in theta0_values:
     k_squared = (1 - np.cos(theta0)) / 2
@@ -21,6 +22,8 @@ for theta0 in theta0_values:
     integral_value = trapezoid(pendulum_integrand(phi_values, np.sqrt(k_squared)), phi_values)
     T = 4 * np.sqrt(l / g) * integral_value
     T_values.append(T / T_Galileu)
+    print(f"{theta0}\t{T/T_Galileu}")
+    
 
 # Tabela de resultados e gráfico
 plt.plot(theta0_values, T_values)
