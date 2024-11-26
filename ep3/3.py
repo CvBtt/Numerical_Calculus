@@ -42,6 +42,6 @@ for trials in trials_values:
     results.append((trials, mean_area, std_dev, std_error))
 
 # Impressão dos resultados
-print("Nt\tIm\t\tσ\tσm")
+print("Nt\tIm\t\tσ\t\tσm")
 for trials, Im, sigma, sigma_m in results:
     print(f"{trials}\t{Im:.7f}\t{sigma:.7f}\t{sigma_m:.7f}")
