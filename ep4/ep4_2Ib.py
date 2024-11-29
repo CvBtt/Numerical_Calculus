@@ -51,7 +51,7 @@ t0 = 0.0
 x0 = -0.5
 v0 = 0.5
 h = 0.01
-t_final = 20.0  # Adjust as needed to capture the dynamics
+t_final = 40.0  # Adjust as needed to capture the dynamics
 
 # Damping coefficients
 gamma_values = [0.125, 0.4]  # Corresponding to 2*gamma = 0.25 and 0.8
@@ -66,7 +66,7 @@ for gamma in gamma_values:
 
 plt.xlabel("x(t)")
 plt.ylabel("x'(t)")
-plt.title("Plot of x'(t) vs x(t) for different damping coefficients")
+plt.title("Plot do x'(t) vs x(t) para diferentes coeficientes de amortecimento")
 plt.legend()
 plt.grid()
 plt.show()

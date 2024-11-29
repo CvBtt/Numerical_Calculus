@@ -78,7 +78,7 @@ x0 = -0.5
 v0 = 0.5
 
 # F values from 0 to 0.35 with step ∆F = 0.0005 (increased from 0.00025)
-delta_F = 0.0005
+delta_F = 0.00025
 F_values = np.arange(0, 0.35 + delta_F, delta_F)
 N_F = len(F_values)
 
@@ -102,6 +102,6 @@ plt.figure(figsize=(12, 8))
 plt.scatter(F_list, x_poincare_list, s=0.1, color='black')
 plt.xlabel('F')
 plt.ylabel('x at Poincaré sections')
-plt.title('Bifurcation Diagram with Numba Optimization')
+plt.title('Diagrama de Bifurcação')
 plt.grid(True)
 plt.show()

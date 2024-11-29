@@ -50,7 +50,7 @@ def runge_kutta_4_system(t0, x0, v0, h, t_final):
 t0 = 0.0
 x0 = -0.5
 h = 0.01
-t_final = 20.0  # Adjusted to capture the dynamics over a sufficient time
+t_final = 40.0  # Adjusted to capture the dynamics over a sufficient time
 
 # Initial velocities
 v0_values = [0.1, 0.25, 0.5]
@@ -64,7 +64,7 @@ for v0 in v0_values:
 
 plt.xlabel("x(t)")
 plt.ylabel("x'(t)")
-plt.title("Plot of x'(t) vs x(t) for different initial velocities")
+plt.title("Plot do x'(t) vs x(t) para velocidades iniciais diferentes")
 plt.legend()
 plt.grid()
 plt.show()

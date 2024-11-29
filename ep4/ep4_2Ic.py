@@ -51,7 +51,7 @@ t0 = 0.0
 x0 = -0.5
 v0 = 0.5
 h = 0.01
-t_final = 100.0  # Adjusted to capture the system's behavior over time
+t_final = 300.0  # Adjusted to capture the system's behavior over time
 
 # Values of F
 F_values = [0.11, 0.115, 0.14, 0.35]
@@ -64,6 +64,6 @@ for F in F_values:
     plt.plot(x, v, linewidth=1)
     plt.xlabel("x(t)")
     plt.ylabel("x'(t)")
-    plt.title(f"Phase Space Trajectory for F = {F}")
+    plt.title(f"Espaço de fase para F = {F}")
     plt.grid(True)
     plt.show()
