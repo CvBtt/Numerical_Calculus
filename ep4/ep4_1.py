@@ -65,19 +65,22 @@ def analytical_solution(t):
 # Parâmetros
 t0 = np.float64(0)
 y0 = np.float64(0)
-z0 = np.float64(1)
+z0 = np.float64(-1)
 h = np.float64(0.01)
 t_final = np.float64(5)
 
 # Resolvendo com Euler
 t_euler, y_euler, z_euler = euler(t0, y0, z0, h, t_final)
+#print(t_euler, y_euler, z_euler)
 
 # Resolvendo com RK4
 t_rk4, y_rk4, z_rk4 = runge_kutta_4(t0, y0, z0, h, t_final)
+#print(t_rk4, y_rk4, z_rk4)
 
 # Solução analítica
 t_exact = np.linspace(t0, t_final, 1000, dtype=np.float64)
 y_exact = analytical_solution(t_exact)
+#print(t_exact, y_exact)
 
 # Plotando os resultados
 plt.figure(figsize=(10, 6))
@@ -93,5 +96,7 @@ plt.show()
 
 # Valores finais
 print(f"Valor de y(5) usando Euler (double precision): {y_euler[-1]:.15f}")
+print(f"Valor de y'(5) usando Euler (double precision): {z_euler[-1]:.15f}")
 print(f"Valor de y(5) usando RK4 (double precision): {y_rk4[-1]:.15f}")
+print(f"Valor de y'(5) usando RK4 (double precision): {z_rk4[-1]:.15f}")
 print(f"Valor exato de y(5) (double precision): {analytical_solution(np.float64(5)):.15f}")
