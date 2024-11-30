@@ -66,12 +66,12 @@ T = 2 * np.pi / omega
 
 # Transient evolution parameters
 h_transient = 0.01 * T  # h = 0.01 * 2π/ω
-transient_steps = 100000  # Reduced from 200,000 to 100,000
+transient_steps = 200000  # Reduced from 200,000 to 100,000
 
 # Main evolution parameters
 h_main = 0.001 * T      # h = 0.001 * 2π/ω
 steps_per_period = int(T / h_main)  # Should be 1000 steps per period
-num_periods = 50        # Reduced from 100 to 50
+num_periods = 100        # Reduced from 100 to 50
 
 # Initial conditions
 x0 = -0.5
